@@ -23,17 +23,17 @@ public class Dictionary<T,E> {
     public T remove(E key){
         T storageValue = valueArrL.get(keyArrL.indexOf(key));
         keyArrL.remove(key);
-        valueArrL.remove(keyArrL.indexOf(key));
+        valueArrL.remove(storageValue);
         size--;
         return storageValue;
 
     }
 
     public boolean contains(E key){
-        if(valueArrL.get(keyArrL.indexOf(key)) != null){
-            return true;
-        }
-        else return false;
+        int i = keyArrL.indexOf(key);
+        //System.out.println(i);
+        //System.out.println(keyArrL.get(i));
+        return i != -1;
     }
     public int size(){
         return this.size;
