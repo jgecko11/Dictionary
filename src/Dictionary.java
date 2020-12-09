@@ -12,6 +12,7 @@ public class Dictionary<T,E> {
     public void put(E key, T value){
         keyArrL.add(key);
         valueArrL.add(value);
+        size++;
     }
 
     public T get(E key){
@@ -22,7 +23,19 @@ public class Dictionary<T,E> {
         T storageValue = valueArrL.get(keyArrL.indexOf(key));
         keyArrL.remove(key);
         valueArrL.remove(keyArrL.indexOf(key));
+        size--;
         return storageValue;
+
+    }
+
+    public boolean contains(E key){
+        if(valueArrL.get(keyArrL.indexOf(key)) != null){
+            return true;
+        }
+        else return false;
+    }
+    public int size(){
+        return this.size;
     }
 
 }
