@@ -9,6 +9,10 @@ public class Dictionary<T,E> {
     public Dictionary(){
     }
 
+    public void put(E key, T value){
+        keyArrL.add(key);
+        valueArrL.add(value);
+    }
 
     public T get(E key){
         return valueArrL.get(keyArrL.indexOf(key));
