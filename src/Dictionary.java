@@ -18,5 +18,11 @@ public class Dictionary<T,E> {
         return valueArrL.get(keyArrL.indexOf(key));
     }
 
+    public T remove(E key){
+        T storageValue = valueArrL.get(keyArrL.indexOf(key));
+        keyArrL.remove(key);
+        valueArrL.remove(keyArrL.indexOf(key));
+        return storageValue;
+    }
 
 }
