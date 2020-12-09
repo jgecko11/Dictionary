@@ -10,7 +10,9 @@ public class Dictionary<T,E> {
     }
 
 
-
+    public T get(E key){
+        return valueArrL.get(keyArrL.indexOf(key));
+    }
 
 
 }
