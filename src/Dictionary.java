@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Dictionary<T,E> {
 
@@ -36,6 +37,22 @@ public class Dictionary<T,E> {
     }
     public int size(){
         return this.size;
+    }
+
+    public Collection<E> keys(){
+        Collection<E> keys = new ArrayList<E>();
+        for(int i = 0; i<size; i++){
+            keys.add(keyArrL.get(i));
+        }
+        return keys;
+    }
+
+    public Collection<T> values(){
+        Collection<T> values = new ArrayList<T>();
+        for(int i = 0; i<size; i++){
+            values.add(valueArrL.get(i));
+        }
+        return values;
     }
 
 }
